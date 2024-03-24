@@ -15,6 +15,7 @@ public class Dinosaur : MonoBehaviour
     [SerializeField] List<AnimationHandler> animationStateChangers;
     Vector3 respawnPoint;
     public GameObject VoidDetector;
+    public GameObject EndDetector;
 
     void Awake(){
 
@@ -61,6 +62,9 @@ public class Dinosaur : MonoBehaviour
         }
         else if(collision.tag == "Midpoint") {
             respawnPoint = transform.position;
+        }
+        else if(collision.tag == "Egg") {
+            EndDetector.SetActive(true);
         }
     }
 }
