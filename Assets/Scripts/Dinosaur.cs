@@ -64,6 +64,7 @@ public class Dinosaur : MonoBehaviour
             respawnPoint = transform.position;
         }
         else if(collision.tag == "Egg") {
+            Time.timeScale = 0f;
             EndDetector.SetActive(true);
         }
     }
