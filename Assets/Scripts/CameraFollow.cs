@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] Vector3 offset;
+    [SerializeField] float offset;
     [SerializeField] float smoothSpeed = 5;
     [SerializeField] Vector3 minValues, maxValues;
 
@@ -15,7 +15,13 @@ public class CameraFollow : MonoBehaviour
     }
 
     public void follow() {
-        Vector3 desiredPosition = target.position + offset;
+        Vector3 desiredPosition = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
+        if(target.transform.localScale.x > 0.0f) {
+            desiredPosition = new Vector3(desiredPosition.x + offset, desiredPosition.y, desiredPosition.z);
+        } else if(target.transform.localScale.x < 0.0f) {
+            desiredPosition = new Vector3(desiredPosition.x - offset, desiredPosition.y, desiredPosition.z);
+        }
+        
         Vector3 bounds = new Vector3 (
             Mathf.Clamp(desiredPosition.x, minValues.x, maxValues.x),
             Mathf.Clamp(desiredPosition.y, minValues.y, maxValues.y),
