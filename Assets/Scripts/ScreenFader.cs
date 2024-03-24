@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class ScreenFader : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
-   [SerializeField] private Color fadeColor = Color.black;
-   [SerializeField] private float fadeTime = 1;
-   [SerializeField] private bool fadeInOnStart = true;
+    [SerializeField] private Color fadeColor = Color.black;
+    [SerializeField] private float fadeTime = 1;
+    [SerializeField] private bool fadeInOnStart = true;
 
     void Start(){
         if(fadeInOnStart){
