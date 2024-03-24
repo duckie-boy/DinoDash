@@ -59,5 +59,8 @@ public class Dinosaur : MonoBehaviour
         if(collision.tag == "Void") {
             transform.position = respawnPoint;
         }
+        else if(collision.tag == "Midpoint") {
+            respawnPoint = transform.position;
+        }
     }
 }
