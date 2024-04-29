@@ -18,6 +18,7 @@ public class Dinosaur : MonoBehaviour
     public GameObject VoidDetector;
     public GameObject EndDetector;
     public LifeCounter lives;
+    public bool hasCheckPoint = false;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -63,6 +64,10 @@ public class Dinosaur : MonoBehaviour
         }
         else if(collision.tag == "Midpoint") {
             respawnPoint = transform.position;
+            if(hasCheckPoint == false) {
+                lives.AddLife();
+                hasCheckPoint = true;
+            }
         }
         else if(collision.tag == "Egg") {
             Time.timeScale = 0f;

@@ -376,6 +376,7 @@ MonoBehaviour:
   VoidDetector: {fileID: 41804654}
   EndDetector: {fileID: 530206674}
   lives: {fileID: 176225445}
+  hasCheckPoint: 0
 --- !u!95 &27811843
 Animator:
   serializedVersion: 5
