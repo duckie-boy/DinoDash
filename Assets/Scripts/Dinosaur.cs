@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dinosaur : MonoBehaviour
 {
@@ -16,13 +17,12 @@ public class Dinosaur : MonoBehaviour
     Vector3 respawnPoint;
     public GameObject VoidDetector;
     public GameObject EndDetector;
+    public LifeCounter lives;
 
-    void Awake(){
-
+    void Awake() {
         rb = GetComponent<Rigidbody2D>();
     }
-    void Start()
-    {
+    void Start() {
         respawnPoint = transform.position;
     }
     public void Move(Vector3 direction) {
@@ -58,6 +58,7 @@ public class Dinosaur : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "Void") {
+            lives.LoseLife();
             transform.position = respawnPoint;
         }
         else if(collision.tag == "Midpoint") {
@@ -66,6 +67,9 @@ public class Dinosaur : MonoBehaviour
         else if(collision.tag == "Egg") {
             Time.timeScale = 0f;
             EndDetector.SetActive(true);
+        }
+        else if(collision.tag == "Thorns") {
+            lives.LoseLife();
         }
     }
 }

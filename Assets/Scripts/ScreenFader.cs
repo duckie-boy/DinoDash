@@ -27,7 +27,6 @@ public class ScreenFader : MonoBehaviour
                 yield return null;
                 timer+=Time.deltaTime;
                 fadeImage.color = new Color(fadeColor.r,fadeColor.g,fadeColor.b, 1f - (timer/fadeTime));
-                //fadeImage.color = Color.Lerp(fadeColor, Color.clear, (timer/fadeTime));
             }
             fadeImage.color = Color.clear;
         }
