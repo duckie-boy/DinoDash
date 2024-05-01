@@ -9,6 +9,7 @@ public class Dinosaur : MonoBehaviour
     public GameObject body;
     [SerializeField] LayerMask ground;
     [SerializeField] float speed = 1.0f;
+    [SerializeField] float mushSpeed = 1.0f;
     [SerializeField] float jumpForce = 20;
     [SerializeField] float jumpOffset = -0.75f;
     [SerializeField] float jumpRadius = 0.1f;
@@ -19,6 +20,10 @@ public class Dinosaur : MonoBehaviour
     public GameObject EndDetector;
     public LifeCounter lives;
     public bool hasCheckPoint = false;
+    public GameObject Spawnable;
+    GameObject mushroom;
+    public GameObject blockHider;
+    GameObject hidden;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -65,7 +70,7 @@ public class Dinosaur : MonoBehaviour
         else if(collision.tag == "Midpoint") {
             respawnPoint = transform.position;
             if(hasCheckPoint == false) {
-                lives.AddLife();
+                lives.ResetLife();
                 hasCheckPoint = true;
             }
         }
@@ -75,6 +80,18 @@ public class Dinosaur : MonoBehaviour
         }
         else if(collision.tag == "Thorns") {
             lives.LoseLife();
+        }
+        else if(collision.tag == "Interactable") {
+            Vector3 InteractableSpawnPoint = new Vector3(collision.offset.x, collision.offset.y+1, transform.position.z);
+            mushroom = Instantiate(Spawnable, InteractableSpawnPoint, Quaternion.identity);
+            mushroom.GetComponent<Rigidbody2D>().velocity = mushroom.transform.right * mushSpeed;
+            Destroy(mushroom, 15);
+            hidden = Instantiate(blockHider, collision.offset, Quaternion.identity);
+            collision.isTrigger = false;
+        }
+        else if(collision.tag == "Mushroom") {
+            Destroy(mushroom);
+            lives.AddLife();
         }
     }
 }

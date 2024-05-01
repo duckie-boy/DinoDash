@@ -26,6 +26,13 @@ public class LifeCounter : MonoBehaviour
     }
 
     public void AddLife() {
+        if(livesRemaining < 3) {
+            lives[livesRemaining].enabled = true;
+            livesRemaining++;
+        }
+    }
+
+    public void ResetLife() {
         livesRemaining = 3;
         lives[0].enabled = true;
         lives[1].enabled = true;

@@ -8,6 +8,8 @@ TagManager:
   - Midpoint
   - Egg
   - Thorns
+  - Interactable
+  - Mushroom
   layers:
   - Default
   - TransparentFX
