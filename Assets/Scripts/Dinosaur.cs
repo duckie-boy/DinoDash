@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Dinosaur : MonoBehaviour
 {
@@ -31,6 +30,7 @@ public class Dinosaur : MonoBehaviour
     void Start() {
         respawnPoint = transform.position;
     }
+
     public void Move(Vector3 direction) {
         
         Vector3 currentVelocity = Vector3.zero;

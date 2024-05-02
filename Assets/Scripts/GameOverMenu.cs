@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    [SerializeField] private ScreenFader screenFader;
+    [SerializeField] ScreenFader screenFader;
 
     public void Restart() {
         screenFader.FadeToColor("LevelOne");
