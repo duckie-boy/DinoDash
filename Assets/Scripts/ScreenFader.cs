@@ -45,7 +45,7 @@ public class ScreenFader : MonoBehaviour
             }
             fadeImage.color = fadeColor;
             if(newScene != ""){
-                SceneManager.LoadSceneAsync(newScene);
+                SceneManager.LoadScene(newScene);
             }
         }
     }
