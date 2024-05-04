@@ -8,11 +8,12 @@ public class Dinosaur : MonoBehaviour
     public GameObject body;
     [SerializeField] LayerMask ground;
     [SerializeField] float speed = 1.0f;
-    [SerializeField] float mushSpeed = 1.0f;
+    [SerializeField] float mushSpeed = 3.5f;
     [SerializeField] float jumpForce = 20;
     [SerializeField] float jumpOffset = -0.75f;
     [SerializeField] float jumpRadius = 0.1f;
-    [SerializeField] public Vector3 checkpoint = new Vector3(-8.5f,-2.44f,0);
+    [SerializeField] Vector3 checkpoint = new Vector3(-8.5f,-2.44f,0);
+    [SerializeField] float scale = 1.0f;
     [SerializeField] List<AnimationHandler> animationStateChangers;
     Vector3 respawnPoint;
     public GameObject VoidDetector;
@@ -38,14 +39,14 @@ public class Dinosaur : MonoBehaviour
         direction.y = 0;
         rb.velocity = currentVelocity + direction * speed;
         if(rb.velocity.x < 0){
-            body.transform.localScale = new Vector3(-1.5f,1.5f,1.5f);
+            body.transform.localScale = new Vector3(-scale,scale,1.0f);
         }else if(rb.velocity.x > 0){
-            body.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+            body.transform.localScale = new Vector3(scale,scale,1.0f);
         }
 
         if(direction != Vector3.zero) {
             foreach(AnimationHandler asc in animationStateChangers) {
-                asc.ChangeAnimationState("TriceratopsWalk", speed);
+                asc.ChangeAnimationState("Walk", speed);
             }
         } else {
             foreach(AnimationHandler asc in animationStateChangers) {
