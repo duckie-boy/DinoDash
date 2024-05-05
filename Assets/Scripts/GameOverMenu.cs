@@ -8,7 +8,7 @@ public class GameOverMenu : MonoBehaviour
     [SerializeField] ScreenFader screenFader;
 
     public void Restart() {
-        screenFader.FadeToColor("LevelOne");
+        screenFader.FadeToColor(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
     }
 

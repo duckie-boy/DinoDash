@@ -7,7 +7,15 @@ public class LevelHandler : MonoBehaviour
 {
     [SerializeField] private ScreenFader screenFader;
     public void LevelOne() {
-        //SceneManager.LoadScene("LevelOne");
         screenFader.FadeToColor("LevelOne");
+    }
+    public void LevelTwo() {
+        screenFader.FadeToColor("LevelTwo");
+    }
+    public void LevelThree() {
+        screenFader.FadeToColor("LevelThree");
+    }
+    public void LevelFour() {
+        screenFader.FadeToColor("LevelFour");
     }
 }

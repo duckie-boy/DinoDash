@@ -2151,6 +2151,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3640306635647012977, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
   m_PrefabInstance: {fileID: 7604130322243167356}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &530206675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2920074809102753932, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
+  m_PrefabInstance: {fileID: 7604130322243167356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530206674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6ccdd581c292147b07af27bfc4a81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553604564
 GameObject:
   m_ObjectHideFlags: 0
@@ -11072,7 +11083,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.5, y: -1.5}
+  m_Offset: {x: 2.5, y: -1.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11083,7 +11094,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 3, y: 0.5}
   m_EdgeRadius: 0
 --- !u!61 &1353392421
 BoxCollider2D:
@@ -15201,7 +15212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3165241034086494329, guid: f4b3dbb783a177e4f97d368129a6ddb3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15366,12 +15377,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2920074809102753932, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
+      propertyPath: nextScene
+      value: LevelTwo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920074809102753932, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
       propertyPath: screenFader
       value: 
       objectReference: {fileID: 1923560136}
     - target: {fileID: 3640306635647012977, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
       propertyPath: m_Name
       value: EndLevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250578730453741997, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 530206675}
+    - target: {fileID: 4250578730453741997, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: nextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250578730453741997, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndLevel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4614378238125341622, guid: b5224117a1d90e848b2865beecdcf694, type: 3}
       propertyPath: m_Pivot.x

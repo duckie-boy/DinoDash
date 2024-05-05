@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         isPasued = false;
     }
     public void restart() {
-        screenFader.FadeToColor("LevelOne");
+        screenFader.FadeToColor(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         isPasued = false;
     }
