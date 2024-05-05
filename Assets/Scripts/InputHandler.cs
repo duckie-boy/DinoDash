@@ -9,13 +9,13 @@ public class InputHandler : MonoBehaviour
     {
         Vector3 input = Vector3.zero;
 
-        if(Input.GetKey(KeyCode.A)) {
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             input.x += -1;
         }
-        if(Input.GetKey(KeyCode.D)) {
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             input.x += 1;
         }
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) {
             dino.Jump();
         }
 
