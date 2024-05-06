@@ -33,13 +33,22 @@ public class MeteorSpawner : MonoBehaviour
         IEnumerator SpawnMeteorRoutine() {
             while(true) {
                 SpawnMeteorRandom();
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 SpawnMeteorRandom();
+                yield return new WaitForSeconds(1);
+                SpawnMeteorRandom();
+                yield return new WaitForSeconds(1);
+                SpawnMeteorRandom();
+                yield return new WaitForSeconds(1);
+                SpawnMeteorRandom();
+                yield return new WaitForSeconds(1);
+                SpawnMeteorRandom();
+                yield return new WaitForSeconds(1);
             }
         }
     }
     void SpawnMeteorRandom() {
         GameObject newMeteor = Instantiate(meteorDaddy, new Vector3((Random.Range(transform.position.x-15,transform.position.x+15)), (Random.Range(13,15)), 0), Quaternion.identity);
-        Destroy(newMeteor,10);
+        Destroy(newMeteor,15);
     }
 }
