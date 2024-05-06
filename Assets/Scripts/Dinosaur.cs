@@ -94,5 +94,8 @@ public class Dinosaur : MonoBehaviour
             Destroy(mushroom);
             lives.AddLife();
         }
+        else if(collision.tag == "Meteor") {
+            lives.LoseLife();
+        }
     }
 }

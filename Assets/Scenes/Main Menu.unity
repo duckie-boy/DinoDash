@@ -548,7 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 281057340}
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
-  fadeTime: 1
+  fadeTime: 2
   fadeInOnStart: 1
 --- !u!114 &281057340
 MonoBehaviour:
