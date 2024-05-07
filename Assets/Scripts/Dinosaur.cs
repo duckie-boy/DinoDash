@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dinosaur : MonoBehaviour
 {
@@ -24,12 +25,17 @@ public class Dinosaur : MonoBehaviour
     GameObject mushroom;
     public GameObject blockHider;
     GameObject hidden;
+    [SerializeField] AudioSource midpointSound;
+    [SerializeField] AudioSource endLevelSound;
+    [SerializeField] AudioSource music;
+    public int nextSceneLoad;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
     }
     void Start() {
         respawnPoint = transform.position;
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     public void Move(Vector3 direction) {
@@ -71,12 +77,20 @@ public class Dinosaur : MonoBehaviour
         else if(collision.tag == "Midpoint") {
             respawnPoint = transform.position;
             if(hasCheckPoint == false) {
-                lives.ResetLife();
                 hasCheckPoint = true;
+                midpointSound.Play();
+                lives.ResetLife();
             }
+            Color tmp = collision.GetComponent<SpriteRenderer>().color;
+            collision.GetComponent<SpriteRenderer>().color = new Color(tmp.r, tmp.g, tmp.b, 255);
         }
         else if(collision.tag == "Egg") {
+            if(nextSceneLoad > PlayerPrefs.GetInt("levelAt")) {
+                PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+            }
+            music.Pause();
             Time.timeScale = 0f;
+            endLevelSound.Play();
             EndDetector.SetActive(true);
         }
         else if(collision.tag == "Thorns") {

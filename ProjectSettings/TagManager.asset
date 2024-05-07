@@ -11,6 +11,7 @@ TagManager:
   - Interactable
   - Mushroom
   - Meteor
+  - Ground
   layers:
   - Default
   - TransparentFX

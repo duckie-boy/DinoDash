@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public static bool isPasued = false;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] private ScreenFader screenFader;
+    [SerializeField] AudioSource music;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
@@ -21,11 +23,13 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume() {
+        music.Play();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPasued = false;
     }
     public void Pause() {
+        music.Pause();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPasued = true;

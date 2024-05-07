@@ -9,6 +9,10 @@ public class LifeCounter : MonoBehaviour
     [SerializeField] Image[] lives;
     [SerializeField] int livesRemaining;
     [SerializeField] GameObject gameOverMenu;
+    [SerializeField] AudioSource gameOverSound;
+    [SerializeField] AudioSource addLifeSound;
+    [SerializeField] AudioSource loseLifeSound;
+    [SerializeField] AudioSource music;
 
     void start() {
         livesRemaining = 3;
@@ -23,9 +27,13 @@ public class LifeCounter : MonoBehaviour
         if(livesRemaining == 0) {
             gameOver();
         }
+        else {
+            loseLifeSound.Play();
+        }
     }
 
     public void AddLife() {
+        addLifeSound.Play();
         if(livesRemaining < 3) {
             lives[livesRemaining].enabled = true;
             livesRemaining++;
@@ -48,7 +56,9 @@ public class LifeCounter : MonoBehaviour
     }
 
     public void gameOver() {
+        music.Pause();
         Time.timeScale = 0f;
+        gameOverSound.Play();
         gameOverMenu.SetActive(true);
     }
 }

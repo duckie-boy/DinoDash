@@ -47,8 +47,12 @@ public class MeteorSpawner : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision) {
+        
+    }
     void SpawnMeteorRandom() {
-        GameObject newMeteor = Instantiate(meteorDaddy, new Vector3((Random.Range(transform.position.x-15,transform.position.x+15)), (Random.Range(13,15)), 0), Quaternion.identity);
+        GameObject newMeteor = Instantiate(meteorDaddy, new Vector3((Random.Range(transform.position.x-10,transform.position.x+10)), (Random.Range(13,15)), 0), Quaternion.identity);
+        newMeteor.GetComponent<Rigidbody2D>().gravityScale = Random.Range(0.3f, 0.75f);
         Destroy(newMeteor,15);
     }
 }
