@@ -10309,6 +10309,7 @@ MonoBehaviour:
   midpointSound: {fileID: 1636841913}
   endLevelSound: {fileID: 129240546}
   music: {fileID: 784636287}
+  nextSceneLoad: 0
 --- !u!212 &457531783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12277,6 +12278,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1890206639550660819, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978915861932837129, guid: a4cd21477e8653b44864e55ace676774, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7214974159276712446, guid: a4cd21477e8653b44864e55ace676774, type: 3}

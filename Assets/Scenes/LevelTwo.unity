@@ -12566,11 +12566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6574059531455951676, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 6574059531455951676, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 7214974159276712446, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: music
@@ -12589,12 +12589,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7448457322916724289, guid: a4cd21477e8653b44864e55ace676774, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 72.973
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448457322916724289, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 7448457322916724289, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8411280553228640828, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12606,11 +12610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8411280553228640828, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 8411280553228640828, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 8732234365326762155, guid: a4cd21477e8653b44864e55ace676774, type: 3}
       propertyPath: m_Name
@@ -16590,6 +16594,7 @@ MonoBehaviour:
   midpointSound: {fileID: 30149686}
   endLevelSound: {fileID: 551993404}
   music: {fileID: 256507832}
+  nextSceneLoad: 0
 --- !u!61 &1154505197
 BoxCollider2D:
   m_ObjectHideFlags: 0
